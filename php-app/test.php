@@ -11,7 +11,7 @@
 
 //Test file non-zero exit is failure
 
-chdir("www/");
+chdir("php-app/www/");
 
 ob_start();
 
