@@ -11,5 +11,5 @@ ADD php-app/www /var/www/html/www
 EXPOSE 80
 
 # Start the service
-CMD ["-D", "FOREGROUND"]
-ENTRYPOINT ["/usr/sbin/httpd"]
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+#ENTRYPOINT ["/usr/sbin/httpd"]
