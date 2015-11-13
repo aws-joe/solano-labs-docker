@@ -1,5 +1,6 @@
 #!/bin/bash
 # Build and start docker container
+echo "starting post worker"
 
 set -o errexit -o pipefail # Exit on error
 
@@ -10,14 +11,16 @@ if [[ -z "$DOCKER_EMAIL" || -z "$DOCKER_USER" || -z "$DOCKER_PASSWORD" ]]; then
   echo 'See: http://docs.solanolabs.com/Setup/setting-environment-variables/#via-config-variables'
   exit 1
 fi
-
+echo "Starting build"
 # Build docker image
 #sudo docker login -e=$DOCKER_EMAIL -u=$DOCKER_USER -p=$DOCKER_PASSWORD # Not necessary for public docker repostiories 
 sudo docker pull centos:6
 sudo docker build -t $DOCKER_USER/$DOCKER_APP:$TDDIUM_SESSION_ID .
-
+echo "done with build"
 # Start docker container and record ID and IP address
-CID=$(sudo docker run -d --expose=80 $DOCKER_USER/$DOCKER_APP:$TDDIUM_SESSION_ID)
-echo $CID > $TDDIUM_REPO_ROOT/container-$TDDIUM_SESSION_ID.cid
-IP_ADDR=$(sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' $CID)
-echo $IP_ADDR > $TDDIUM_REPO_ROOT/container-$TDDIUM_SESSION_ID.ip
+#CID=$(sudo docker run -d --expose=80 $DOCKER_USER/$DOCKER_APP:$TDDIUM_SESSION_ID)
+#echo $CID > $TDDIUM_REPO_ROOT/container-$TDDIUM_SESSION_ID.cid
+#IP_ADDR=$(sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' $CID)
+#echo $IP_ADDR > $TDDIUM_REPO_ROOT/container-$TDDIUM_SESSION_ID.ip
+
+echo "should be good"
