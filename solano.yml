@@ -20,4 +20,3 @@ php:
 
 tests:
  - 'php php-app/test.php'
- - 'docker run fontesj/solano-docker:latest /usr/bin/php /var/www/html/test.php'
