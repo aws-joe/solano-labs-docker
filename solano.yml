@@ -12,7 +12,6 @@ environment:
 
 hooks:
   pre_setup: chmod -R 755 ./scripts
-  post_worker: ./scripts/solano-docker_build.sh
   post_build: ./scripts/solano-docker-deploy.sh
 
 php:
