@@ -20,4 +20,4 @@ php:
 
 tests:
  - 'php php-app/test.php'
- - 'sudo docker ps'
+ - 'which docker'
