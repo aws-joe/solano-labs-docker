@@ -10,9 +10,13 @@ environment:
   'DEPLOY_DOCKER': 'true'
   'DEPLOY_AWS_ECS': 'false'
 
+timeout_hook: 120
+
 hooks:
-  pre_setup: chmod -R 755 ./scripts
-  post_build: ./scripts/solano-docker-deploy.sh
+  pre_setup: |
+    chmod -R 755 ./scripts
+    ./scripts/docker-build.sh
+  post_build: ./scripts/docker-deploy.sh
 
 php:
   version: '5.3'
