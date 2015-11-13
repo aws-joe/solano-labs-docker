@@ -1,9 +1,22 @@
 #config/solano.yml
 ---
 
+system:
+  docker: true
+
+
+environment:
+  'DOCKER_APP': 'solano-docker'
+  'DEPLOY_DOCKER': 'true'
+  'DEPLOY_AWS_ECS': 'false'
+
+hooks:
+  pre_setup: ./scripts/solano-docker_build.sh
+  post_build: ./scripts/solano-docker-deploy.sh
 
 php:
   version: '5.3.3'
 
 tests:
  - 'php php-app/test.php'
+ - 'docker run fontesj/solano-docker:latest /usr/bin/php /var/www/html/test.php'
