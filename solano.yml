@@ -11,9 +11,8 @@ environment:
   'DEPLOY_AWS_ECS': 'false'
 
 hooks:
-  pre_setup:
-        - sudo chmod -R 755 ./scripts 
-        - ./scripts/solano-docker_build.sh
+  pre_setup: sudo chmod -R 755 ./scripts
+  post_worker: ./scripts/solano-docker_build.sh
   post_build: ./scripts/solano-docker-deploy.sh
 
 php:
