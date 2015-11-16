@@ -20,4 +20,4 @@ php:
 
 tests:
  - 'php php-app/test.php'
- - 'which docker'
+ - 'php dockerrun.php $TDDIUM_SESSION_ID'
