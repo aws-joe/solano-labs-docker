@@ -1,18 +1,17 @@
-system:
-  docker: true
+#system:
+#  docker: true
 
 
-environment:
-  'DOCKER_APP': 'solano-docker'
-  'DEPLOY_DOCKER': 'true'
-  'DEPLOY_AWS_ECS': 'false'
+#environment:
+#  'DOCKER_APP': 'solano-docker'
+#  'DEPLOY_DOCKER': 'true'
+#  'DEPLOY_AWS_ECS': 'false'
 
 timeout_hook: 120
 
 hooks:
-  pre_setup: |
-    chmod -R 755 ./scripts
-    ./scripts/docker-build.sh
+  pre_setup: chmod -R 755 ./scripts
+  post_setup: ./scripts/docker-build.sh
   post_build: ./scripts/docker-deploy.sh
 
 php:
