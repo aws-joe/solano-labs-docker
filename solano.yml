@@ -12,6 +12,7 @@ timeout_hook: 120
 
 hooks:
   pre_setup: chmod -R 755 ./scripts
+  worker_setup:  php dockerrun.php $TDDIUM_SESSION_ID
   post_setup: ./scripts/docker-build.sh
   post_build: ./scripts/docker-deploy.sh
 
@@ -20,4 +21,3 @@ php:
 
 tests:
  - 'php php-app/test.php'
- - 'php dockerrun.php $TDDIUM_SESSION_ID'
