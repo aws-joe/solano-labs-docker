@@ -31,4 +31,6 @@ if(file_put_contents("Dockerrun.aws.json",json_encode($dockerConf)) == FALSE)
 	exit(1);
 	}
 
+print "Docker run file:  Dockerrun.aws.json \n Image: $image \n";
+
 ?>
