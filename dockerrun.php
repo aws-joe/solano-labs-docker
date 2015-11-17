@@ -1,4 +1,7 @@
 <?php
+//script to create Dockerrun file for use with
+//aws elastic beanstalk
+//takes in argv1 and uses that as the dockerhub tag
 
 if(!isset($argv[1]))
 	{
