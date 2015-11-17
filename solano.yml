@@ -8,7 +8,7 @@ environment:
   'DEPLOY_DOCKER': 'true'
   'DEPLOY_AWS_ECS': 'false'
 
-timeout_hook: 120
+timeout_hook: 300
 
 hooks:
   pre_setup: chmod -R 755 ./scripts
