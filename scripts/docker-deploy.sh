@@ -32,7 +32,7 @@
 
 echo "starting push"
 
-#docker login -e=$DOCKER_EMAIL -u=$DOCKER_USER -p=$DOCKER_PASSWORD
-#docker push $DOCKER_USER/$DOCKER_APP:$TDDIUM_SESSION_ID
+docker login -e=$DOCKER_EMAIL -u=$DOCKER_USER -p=$DOCKER_PASSWORD
+docker push $DOCKER_USER/$DOCKER_APP:$TDDIUM_SESSION_ID
 
 echo "done with push"
