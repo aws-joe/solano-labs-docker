@@ -13,4 +13,3 @@ EXPOSE 80
 
 # Start the service
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-#ENTRYPOINT ["/usr/sbin/httpd"]
