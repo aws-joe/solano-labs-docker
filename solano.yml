@@ -21,3 +21,4 @@ php:
 
 tests:
  - 'php php-app/test.php'
+ - 'sudo docker run fontesj/solano-docker:$TDDIUM_SESSION_ID /usr/bin/php /var/www/html/www/index.php'
