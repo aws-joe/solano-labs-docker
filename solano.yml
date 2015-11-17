@@ -1,11 +1,12 @@
-#system:
-#  docker: true
+system:
+  docker: true
+  queue: docker
 
 
-#environment:
-#  'DOCKER_APP': 'solano-docker'
-#  'DEPLOY_DOCKER': 'true'
-#  'DEPLOY_AWS_ECS': 'false'
+environment:
+  'DOCKER_APP': 'solano-docker'
+  'DEPLOY_DOCKER': 'true'
+  'DEPLOY_AWS_ECS': 'false'
 
 timeout_hook: 120
 
